@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Nunito';
+    src: local('Nunito') url("@assets/fonts/Nunito-VariableFont_wght.woff2") format("woff2");
+    font-weight: 1 1000;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway') url("@assets/fonts/Raleway-VariableFont_wght.woff2") format("woff2");
+    font-weight: 1 1000;
+}

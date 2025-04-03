@@ -1,6 +1,15 @@
 ---
 // Tailwind CSS Import
 import "@styles/global.css";
+
+import CommonMetaTags from "@components/CommonMetaTags.astro";
+import { Image } from "astro:assets";
+import astroLogo from "../../public/favicon.svg";
+const {title} = Astro.props;
+
+function openAstroPage() {
+	window.open('https://docs.astro.build/en/concepts/why-astro/', '_blank');
+}
 ---
 
 <!doctype html>
@@ -8,14 +17,36 @@ import "@styles/global.css";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<CommonMetaTags/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="flex flex-col justify-center items-center">
+		<header class="flex flex-row justify-between items-center w-full py-2 px-4">
+			<h1 class="text-3xl">LAU'S TODO</h1>
+			<Image loading="eager" id="header-astro-logo" src={astroLogo} alt="Astro Logo" width="50" height="50" />
+		</header>
+		<main class="flex flex-1">
+			<slot />
+		</main>
+		<footer class="flex flex-col justify-center items-center w-full py-2 text-center">
+			<p>COPYRIGHT &#169; <span></span> l_lau_u | ALL RIGHTS RESERVED</p>
+			<p>MADE WITH ASTRO</p>
+		</footer>
 	</body>
 </html>
+
+<script is:inline defer>
+	const year = new Date().getFullYear();
+	document.querySelector("span").innerHTML = year;
+</script>
+
+<script>
+	document.querySelector("#header-astro-logo")?.addEventListener("click", () => {
+		window.open('https://docs.astro.build/en/concepts/why-astro/', '_blank');
+		});
+</script>
 
 <style>
 	html,
@@ -23,5 +54,38 @@ import "@styles/global.css";
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background-color: #111111;
+		color: #FFFFFF;
+		font-family: 'Raleway';
+		font-weight: bold;
+	}
+
+	header {
+		background-color: #0A0A0A;
+	}
+
+	footer {
+		background-color: #0A0A0A;
+		font-family: 'Nunito';
+		font-size: 0.9rem;
+		line-height: 1.8rem;
+	}
+
+	#header-astro-logo {
+		filter: drop-shadow(0px 0px 2px #FFFFFF);
+		cursor: pointer;
+		transition: filter 0.2s ease-in-out;
+	}
+
+	#header-astro-logo:hover {
+		filter: drop-shadow(0px 0px 3px #FFFFFF);
+	}
+
+
+	@media (max-width: 370px) {
+		footer {
+			font-size: 0.7rem;
+			line-height: 1.2rem;
+		}
 	}
 </style>
