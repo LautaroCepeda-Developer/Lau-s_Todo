@@ -1,7 +1,62 @@
 ---
+import Task from '@components/Task.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+    <div class="task-creation-form">
+        <input type="text" placeholder="TASK TEXT..." class="task-creation-input">
+        <input type="button" value="ADD TASK" class="task-creation-button">
+    </div>
+    <ul class="flex flex-col justify-start items-center w-full">
 
+    </ul>
 </Layout>
+
+<script is:inline>
+    
+</script>
+
+
+<style>
+    .task-creation-form {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: row;
+        width: 100%;
+        padding: 0.5rem;
+        color: #000;
+    }
+
+    .task-creation-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        height: 100%;
+        background-color: #FFF;
+        border-radius: 6px;
+        padding: 0.5rem;
+    }
+
+    .task-creation-button {
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.5s ease-in-out;
+        margin-left: 0.8rem;
+    }
+    .task-creation-button:hover {
+        background-color: #00b400;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0.5rem;
+        padding-bottom: 0;
+    }
+
+</style>

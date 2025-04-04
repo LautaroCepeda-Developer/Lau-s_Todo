@@ -1,0 +1,54 @@
+.task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #FFF;
+    color: #000;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.task-text {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-wrap: wrap;
+    line-break: normal;
+    text-align: left;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.task.finished{
+    background-color: #262626;
+}
+.task.finished > p {
+    text-decoration: line-through;
+    color: #F00;
+}
+
+.task-delete-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    margin-left: 0.8rem;
+}
+
+.task-delete-button {
+    cursor: pointer;
+    transition: filter 0.5s ease-in-out;
+}
+
+.task-delete-button:hover {
+    filter: invert(12%) sepia(59%) saturate(6153%) hue-rotate(357deg) brightness(121%) contrast(124%);
+}
+
+

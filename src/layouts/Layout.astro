@@ -2,6 +2,8 @@
 // Tailwind CSS Import
 import "@styles/global.css";
 
+import "@styles/index.css";
+
 import CommonMetaTags from "@components/CommonMetaTags.astro";
 import { Image } from "astro:assets";
 import astroLogo from "../../public/favicon.svg";
@@ -20,14 +22,16 @@ function openAstroPage() {
 		<CommonMetaTags/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preload" href="/Cross.svg" as="image" type="image/svg+xml"/>
+		<script src="../scripts/taskHandler.js"></script>
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col justify-center items-center">
+	<body class="flex flex-col justify-start items-center">
 		<header class="flex flex-row justify-between items-center w-full py-2 px-4">
 			<h1 class="text-3xl">LAU'S TODO</h1>
 			<Image loading="eager" id="header-astro-logo" src={astroLogo} alt="Astro Logo" width="50" height="50" />
 		</header>
-		<main class="flex flex-1">
+		<main class="flex flex-1 w-full p-2.5 flex-col justify-start items-center">
 			<slot />
 		</main>
 		<footer class="flex flex-col justify-center items-center w-full py-2 text-center">
