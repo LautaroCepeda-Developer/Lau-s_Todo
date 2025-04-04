@@ -51,10 +51,9 @@
     filter: invert(12%) sepia(59%) saturate(6153%) hue-rotate(357deg) brightness(121%) contrast(124%);
 }
 
-@media (max-width: 768px) {
-    .task-delete-button:hover {
-        filter: invert(12%) sepia(59%) saturate(6153%) hue-rotate(357deg) brightness(121%) contrast(124%);
-    }
+.task-delete-button:hover {
+    filter: invert(12%) sepia(59%) saturate(6153%) hue-rotate(357deg) brightness(121%) contrast(124%);
 }
+
 
 
