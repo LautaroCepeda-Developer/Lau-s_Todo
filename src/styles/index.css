@@ -44,11 +44,17 @@
 
 .task-delete-button {
     cursor: pointer;
-    transition: filter 0.5s ease-in-out;
+    transition: filter 0.2s ease;
 }
 
-.task-delete-button:hover {
+.task-delete-button:active {
     filter: invert(12%) sepia(59%) saturate(6153%) hue-rotate(357deg) brightness(121%) contrast(124%);
+}
+
+@media (max-width: 768px) {
+    .task-delete-button:hover {
+        filter: invert(12%) sepia(59%) saturate(6153%) hue-rotate(357deg) brightness(121%) contrast(124%);
+    }
 }
 
 

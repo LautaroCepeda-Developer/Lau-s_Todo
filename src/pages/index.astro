@@ -36,6 +36,7 @@ import Layout from '../layouts/Layout.astro';
         width: 100%;
         text-align: left;
         height: 100%;
+        font-size: 1.1rem;
         background-color: #FFF;
         border-radius: 6px;
         padding: 0.5rem;
@@ -49,9 +50,31 @@ import Layout from '../layouts/Layout.astro';
         transition: background-color 0.5s ease-in-out;
         margin-left: 0.8rem;
     }
-    .task-creation-button:hover {
+
+    .task-creation-button:active {
         background-color: #00b400;
     }
+
+    @media (max-width: 500px) {
+        .task-creation-form {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .task-creation-button {
+            width: 100%;
+            margin: 0;
+            margin-top: 0.6rem;
+        }
+    }
+
+    @media (max-width: 768px) { 
+        .task-creation-button:hover {
+        background-color: #00b400;
+    }
+    }
+
 
     ul {
         list-style-type: none;
