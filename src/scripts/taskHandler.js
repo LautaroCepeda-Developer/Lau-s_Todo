@@ -199,8 +199,12 @@ function createTaskInDOM({ taskId, taskText, taskState }) {
 
     taskContainer.appendChild(taskElement);
 }
+
+// Variable to alternate between left and right animation directions
 let transitionDirection = 'right';
+
 function deleteTask(element) {
+    // Get all tasks from local storage
     const tasks = getTasks();
 
     // Get the task id from the element
