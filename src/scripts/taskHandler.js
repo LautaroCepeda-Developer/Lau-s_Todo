@@ -83,9 +83,9 @@ function updateAllTasksInDOM() {
         // Create a new task element
         const taskElement = document.createElement('li');
         taskElement.innerHTML = `
-                <p class="task-text">${task.title}</p>
+                <p class="task-text" title="Task Text" aria-labelledby="Task Text">${task.title}</p>
                 <div class="task-delete-button-container" title="Delete Task" aria-label="Delete Task">
-                    <img src="/Cross.svg" alt="Delete Task Button" class="task-delete-button" width="30">
+                    <img src="/Cross.svg" alt="Delete Task Button" class="task-delete-button" width="30" draggable="false">
                 </div>
             `;
         // Set the id of the task
@@ -171,9 +171,9 @@ function createTaskInDOM({ taskId, taskText, taskState }) {
     // Create a SINGLE task element
     const taskElement = document.createElement('li');
     taskElement.innerHTML = `
-                <p class="task-text">${taskText}</p>
+                <p class="task-text" title="Task Text" aria-labelledby="Task Text">${taskText}</p>
                 <div class="task-delete-button-container" title="Delete Task" aria-label="Delete Task">
-                    <img src="/Cross.svg" alt="Delete Task Button" class="task-delete-button" width="30">
+                    <img src="/Cross.svg" alt="Delete Task Button" class="task-delete-button" width="30" draggable="false">
                 </div>
             `;
     // Set the id of the task

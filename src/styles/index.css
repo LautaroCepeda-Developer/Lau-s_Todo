@@ -42,6 +42,18 @@
     color: #F00;
 }
 
+.task.finished > div img {
+    filter: brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(0%) hue-rotate(12deg) brightness(104%) contrast(104%);
+}
+
+.task.finished > div img:hover {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(73%) saturate(6104%) hue-rotate(348deg) brightness(86%) contrast(141%);
+}
+
+.task.finished > div img:active {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(73%) saturate(6104%) hue-rotate(348deg) brightness(86%) contrast(141%);
+}
+
 .task-delete-button-container {
     display: flex;
     justify-content: center;
@@ -53,6 +65,10 @@
 .task-delete-button {
     cursor: pointer;
     transition: filter 0.3s ease-out;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .task-delete-button:active {
@@ -62,6 +78,5 @@
 .task-delete-button:hover {
     filter: invert(12%) sepia(59%) saturate(6153%) hue-rotate(357deg) brightness(121%) contrast(124%);
 }
-
 
 
