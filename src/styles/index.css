@@ -10,8 +10,7 @@
     border-radius: 6px;
     margin-bottom: 0.5rem;
     cursor: pointer;
-    transition: transform 0.3s ease-out;
-    transition: background-color 0.3s ease-out;
+    transition: transform 0.3s ease-in, background-color 0.3s ease-out;
 }
 
 .task-text {
@@ -26,8 +25,7 @@
     text-align: left;
     word-break: break-all;
     white-space: normal;
-    transition: color 0.3s ease-out;
-    transition: text-decoration 0.3s ease-out;
+    transition: color 0.3s ease-out, text-decoration 0.3s ease-out;
     -webkit-user-drag: none;
     -moz-user-select: none;
     -ms-user-select: none;
