@@ -84,7 +84,7 @@ function updateAllTasksInDOM() {
         const taskElement = document.createElement('li');
         taskElement.innerHTML = `
                 <p class="task-text">${task.title}</p>
-                <div class="task-delete-button-container">
+                <div class="task-delete-button-container" title="Delete Task" aria-label="Delete Task">
                     <img src="/Cross.svg" alt="Delete Task Button" class="task-delete-button" width="30">
                 </div>
             `;
@@ -172,7 +172,7 @@ function createTaskInDOM({ taskId, taskText, taskState }) {
     const taskElement = document.createElement('li');
     taskElement.innerHTML = `
                 <p class="task-text">${taskText}</p>
-                <div class="task-delete-button-container">
+                <div class="task-delete-button-container" title="Delete Task" aria-label="Delete Task">
                     <img src="/Cross.svg" alt="Delete Task Button" class="task-delete-button" width="30">
                 </div>
             `;
@@ -199,7 +199,7 @@ function createTaskInDOM({ taskId, taskText, taskState }) {
 
     taskContainer.appendChild(taskElement);
 }
-
+let transitionDirection = 'right';
 function deleteTask(element) {
     const tasks = getTasks();
 
@@ -215,8 +215,20 @@ function deleteTask(element) {
     // Update the tasks in local storage
     localStorage.setItem(storageKey, JSON.stringify(tasks));
 
-    // Delete the task element from the DOM
-    element.remove();
+    // Animate the deletion of the task
+    if (transitionDirection === 'right') {
+        element.style.transform = 'translateX(150%)';
+        transitionDirection = 'left';
+    } else {
+        element.style.transform = 'translateX(-150%)';
+        transitionDirection = 'right';
+    }
+
+    // Removing the task element from the DOM after delete animation completes
+    setTimeout(() => {
+        // Delete the task element from the DOM
+        element.remove();
+    }, 300);
 }
 
 // Initial task load
